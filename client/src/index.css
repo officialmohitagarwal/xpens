@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #020b2d;
+  --bg-card: #0f172a;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+}
+
+body {
+  margin: 0;
+  background: #020b2d;
+  font-family: Inter, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  animation: marquee 18s linear infinite;
+  white-space: nowrap;
+}
+
+/* @import "tailwindcss";
+
+:root {
+  --bg-primary: #020b2d;
+  --bg-card: #0f172a;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+}
+body {
+  margin: 0;
+  background: #f8fafc;
+  font-family: Inter, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+} */
