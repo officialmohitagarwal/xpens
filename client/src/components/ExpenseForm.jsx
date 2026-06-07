@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Loader2 } from "lucide-react";
 
 function ExpenseForm({
   onSubmit,
@@ -12,11 +14,23 @@ function ExpenseForm({
     defaultValues,
   });
 
+
+  const [loading, setLoading] = useState(false);
+
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="space-y-4"
-    >
+  onSubmit={handleSubmit(
+    async (data) => {
+      try {
+        setLoading(true);
+        await onSubmit(data);
+      } finally {
+        setLoading(false);
+      }
+    }
+  )}
+  className="space-y-4"
+>
       {/* TITLE + AMOUNT */}
       <div className="grid md:grid-cols-2 gap-4">
         <div>
@@ -255,6 +269,9 @@ function ExpenseForm({
 
           <input
             type="date"
+            style={{
+              colorScheme: "dark",
+            }}
             className="
               w-full
               bg-white/5
@@ -308,6 +325,7 @@ function ExpenseForm({
       {/* SUBMIT */}
       <button
         type="submit"
+        disabled={loading}
         className="
           w-full
           bg-emerald-500
@@ -318,9 +336,30 @@ function ExpenseForm({
           py-2.5
           rounded-xl
           transition
+          disabled:opacity-70
+          disabled:cursor-not-allowed
+          flex
+          items-center
+          justify-center
+          gap-2
         "
       >
-        Save Expense
+        {loading ? (
+          <>
+            <Loader2
+              size={16}
+              className="animate-spin"
+            />
+
+            {defaultValues?._id
+              ? "Saving..."
+              : "Adding..."}
+          </>
+        ) : defaultValues?._id ? (
+          "Save Changes"
+        ) : (
+          "Add Expense"
+        )}
       </button>
     </form>
   );

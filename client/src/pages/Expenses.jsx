@@ -8,6 +8,7 @@ import CategoryFilter from "../components/CategoryFilter";
 import ExpenseTable from "../components/ExpenseTable";
 import ExpenseForm from "../components/ExpenseForm";
 import ExpenseModal from "../components/ExpenseModal";
+import { Loader2 } from "lucide-react";
 
 import api from "../services/api";
 
@@ -238,6 +239,9 @@ function Expenses() {
                 e.target.value
               )
             }
+            style={{
+              colorScheme: "dark",
+            }}
             className="
               bg-white/5
               border border-white/10
