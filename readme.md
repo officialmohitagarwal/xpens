@@ -16,7 +16,7 @@ Backend API:
 
 Email: [demo@xpens.com](mailto:demo@xpens.com)
 
-Password: demo123
+Password: demo@246
 
 ---
 
@@ -208,3 +208,9 @@ LinkedIn: https://linkedin.com/in/mohitagarwal2307
 
 GitHub: https://github.com/officialmohitagarwal
 
+
+
+officialmohitagarwal_db_user
+CSZWJNNNpfEZGn1Q
+
+mongodb+srv://officialmohitagarwal_db_user:CSZWJNNNpfEZGn1Q@cluster0.3fofa00.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0

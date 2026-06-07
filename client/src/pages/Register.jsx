@@ -5,6 +5,8 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import { Loader2 } from "lucide-react";
+
 import { registerUser } from "../services/authApi";
 
 import toast from "react-hot-toast";
@@ -119,7 +121,6 @@ function Register() {
 
         <div className="space-y-5 mt-8">
           {/* NAME */}
-
           <div>
             <input
               placeholder="Full Name"
@@ -167,7 +168,6 @@ function Register() {
           </div>
 
           {/* EMAIL */}
-
           <div>
             <input
               type="email"
@@ -217,7 +217,6 @@ function Register() {
           </div>
 
           {/* PASSWORD */}
-
           <div>
             <input
               type="password"
@@ -266,35 +265,46 @@ function Register() {
             )}
           </div>
 
-          {/* BUTTON */}
-
+          {/* REGISTER BUTTON */}
           <button
             onClick={handleRegister}
             disabled={loading}
             className="
               w-full
-             bg-emerald-500
-            hover:bg-emerald-400
-              disabled:opacity-50
+              bg-emerald-500
+              hover:bg-emerald-400
+              disabled:opacity-60
+              disabled:cursor-not-allowed
               rounded-xl
               py-3
               font-semibold
               text-black
               transition-all
+              flex
+              items-center
+              justify-center
+              gap-2
             "
           >
-            {loading
-              ? "Creating Account..."
-              : "Create Account"}
+            {loading ? (
+              <>
+                <Loader2
+                  size={18}
+                  className="animate-spin"
+                />
+                Creating Account...
+              </>
+            ) : (
+              "Create Account"
+            )}
           </button>
 
           {/* LOGIN LINK */}
-
           <p className="text-center text-slate-400">
             Already have an account?{" "}
             <Link
               to="/login"
-              className="text-green-400 hover:underline"
+              className="text-emerald-400 hover:underline"
             >
               Login
             </Link>

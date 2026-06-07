@@ -7,6 +7,8 @@ import toast from "react-hot-toast";
 import { loginUser } from "../services/authApi";
 import { useAuth } from "../context/AuthContext";
 
+import { Loader2 } from "lucide-react";
+
 function Login() {
   const { login } = useAuth();
 
@@ -24,7 +26,7 @@ function Login() {
 
   const fillDemoCredentials = () => {
     setEmail("demo@xpens.com");
-    setPassword("demo123");
+    setPassword("demo@246");
     setErrors({});
   };
 
@@ -266,11 +268,25 @@ function Login() {
                 font-semibold
                 text-black
                 transition
+                disabled:opacity-70
+                disabled:cursor-not-allowed
+                flex
+                items-center
+                justify-center
+                gap-2
               "
             >
-              {loading
-                ? "Logging in..."
-                : "Login"}
+              {loading ? (
+                <>
+                  <Loader2
+                    size={18}
+                    className="animate-spin"
+                  />
+                  Logging in...
+                </>
+              ) : (
+                "Login"
+              )}
             </button>
 
             {/* REGISTER */}
@@ -311,7 +327,7 @@ function Login() {
                 <p className="text-slate-400">
                   Password:
                   <span className="text-white ml-2">
-                    demo123
+                    demo@246
                   </span>
                 </p>
               </div>
