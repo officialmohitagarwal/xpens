@@ -8,9 +8,9 @@ It helps users track expenses, visualize spending patterns, manage categories, a
 
 ## Live Demo
 
-Frontend: 
+Frontend: https://xpens-teal.vercel.app/
 
-Backend API: 
+Backend API: https://xpens-7qvp.onrender.com/api
 
 ### Demo Credentials
 
@@ -209,8 +209,3 @@ LinkedIn: https://linkedin.com/in/mohitagarwal2307
 GitHub: https://github.com/officialmohitagarwal
 
 
-
-officialmohitagarwal_db_user
-CSZWJNNNpfEZGn1Q
-
-mongodb+srv://officialmohitagarwal_db_user:CSZWJNNNpfEZGn1Q@cluster0.3fofa00.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
